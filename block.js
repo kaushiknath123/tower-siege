@@ -1,20 +1,15 @@
-class block {
+class block extends baseclass {
+  constructor(x, y, width, height){
+    super(x, y, width, height);
+    
+  }
+  display(){
+    if(this.body.speed<2){
+    super.display();
 
-    constructor(x, y, width, height){
-
-        this.body = Bodies.rectangle(x, y, width, height);
-
-        this.width = width;
-        this.height = height;
-
-        World.add(world, this.body);
     }
-    display () {
-        var pos = this.body.position;
-        push();
-        translate(pos.x, pos.y);
-        rectMode(CENTER);
-        rect(this.body, x, y, this.width, this.height);
-        pop();
+    else{
+      World.remove(world, this.body);
     }
+  }
 }
