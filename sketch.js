@@ -105,6 +105,8 @@ function draw () {
     block32.display();
    polygon1.display();
    sling1.display();
+
+   
 }
 
 function mouseDragged(){
@@ -114,4 +116,9 @@ function mouseDragged(){
 
 function mouseReleased(){
     sling1.fly();
+}
+function keyPressed(){
+    if(keyCode === 32){
+        slingshot.attach(this.image);
+    }
 }
